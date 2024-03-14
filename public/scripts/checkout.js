@@ -53,8 +53,8 @@ async function displayItems() {
     cartItemsContainer.innerHTML = "";
 
     if (cartItems && cartItems.length > 0) {
-        cartItems.forEach((item, index) => {
-              var item = produtos[i.nome]
+        cartItems.forEach((i, index) => {
+            var item = produtos[i.nome]
             let itemElement = document.createElement("div");
             itemElement.classList.add("cart-item");
             itemElement.innerHTML = `
