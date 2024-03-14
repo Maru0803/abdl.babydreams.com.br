@@ -45,7 +45,7 @@ if (nextButton) nextButton.addEventListener('click', function () {
     });
 });
 
-function displayItems() {
+async function displayItems() {
     updateCartTotal();
     let cartItems = JSON.parse(localStorage.getItem("carrinhoDeCompras"));
     let cartItemsContainer = document.getElementById("cartItems");
