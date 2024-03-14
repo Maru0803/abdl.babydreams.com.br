@@ -82,7 +82,7 @@
 }
 
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     .menu-button, .menu-sidebar {
         display: none;
     }
