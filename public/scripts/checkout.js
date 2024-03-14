@@ -54,21 +54,22 @@ async function displayItems() {
 
     if (cartItems && cartItems.length > 0) {
         cartItems.forEach((item, index) => {
-            let item = produtos[i.name]
+              var item = produtos[i.nome]
             let itemElement = document.createElement("div");
             itemElement.classList.add("cart-item");
             itemElement.innerHTML = `
-                <img src="https://i.imgur.com/VaFAWzi.png" alt="${item.description}">
+                <img src="${item.image}" alt="${item.description}">
                 <div class="item-details">
-                    <p>${item.nome}</p>
+                    <p>${item.names[0]}</p>
                     <p>R$ ${item.preco}</p>
                 </div>
                 <div class="item-quantity">
                     <button class="btn-add" onclick="decreaseQuantity(${index})">-</button>
-                    <span>${item.count}</span>
+                    <span>${i.count}</span>
                     <button class="btn-add" onclick="increaseQuantity(${index})">+</button>
                     <button class="delete-button" onclick="deleteItem(${index})">x</button>
                 </div>
+                
             `;
             cartItemsContainer.appendChild(itemElement);
         });
