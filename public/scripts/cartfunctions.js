@@ -148,7 +148,7 @@ function carregarCarrinhoDoLocalStorage() {
     return carrinhoSalvo ? JSON.parse(carrinhoSalvo) : [];
 }
 
-function displayCartItems() {
+async function displayCartItems() {
     updateCartTotal();
     const { produtos } = await fetch('/apis/produtos').then(r => r.json())
     let cartItems = JSON.parse(localStorage.getItem("carrinhoDeCompras"));
