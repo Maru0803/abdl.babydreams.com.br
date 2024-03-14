@@ -79,7 +79,7 @@ app.get('/privacity', async (req, res) => {
 });
 
 
-app.listen(3005, () => {
-    console.log('Online em http://localhost:3005')
+app.listen(3000, () => {
+    console.log('Online')
 });
 
