@@ -52,13 +52,6 @@ header {
     body {
          font-size: 10px
     }
-    
-    .modal-content img {
-    width: 500px;
-    height: 500px;
-    z-index: 10000
-    }
-    
     .house-border {
        background-color: #f0f0f0;
        padding: 10px;
