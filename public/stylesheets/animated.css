@@ -31,7 +31,7 @@
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 111111111;
     left: 0;
     top: 0;
     width: 100%;
@@ -39,6 +39,7 @@
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.4);
 }
+
 @media only screen and (min-width: 769px) {
    .modal-content {
       margin: 15% auto;
@@ -47,6 +48,7 @@
       text-align: center;
    }
 }
+
 @media only screen and (max-width: 768px) {
     .modal-content{
         margin: 15% auto;
@@ -62,6 +64,7 @@
 }
 
 .modal-content img {
+    z-index: 10000
     max-width: 100%;
     height: auto;
     width: 100%;
