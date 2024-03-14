@@ -15,7 +15,7 @@ const { database } = require("./utils/database.js");
 
 const verificarOrigem = (req, res, next) => {
     const origin = req.get('host');
-    if (origin === 'localhost:3005') {
+    if (origin === 'starfish-app-6bc4k.ondigitalocean.app') {
         next();
     } else {
         res.status(200).send('Acesso Negado');
