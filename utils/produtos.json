@@ -1,0 +1,415 @@
+{
+    "fantasma": {
+        "name": "fantasma",
+        "category": "bodys",
+        "image": "https://i.imgur.com/5yolkaD.png",
+        "names": [
+            "Body Fantasma",
+            "Bodysuit Fantasma",
+            "Bodysuit",
+            "Body",
+            "Fantasma"
+        ],
+        "price": 80,
+        "description": "Bodysuit ABDL com estampa fofa de fantasma, comprimento: 76, busto 86, cintura 75 ",
+        "size": [
+            "Tamanho S/M"
+        ],
+        "count": [
+            "1 Peça"
+        ]
+    },
+    "junior1": {
+        "name": "junior1",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/HCCVjgC.png",
+        "names": [
+            "Mamypoko Junior XXXL",
+            "Mamypoko XXXL",
+            "Mamypoko",
+            "Fralda XXXL",
+            "Fralda"
+        ],
+        "price": 15,
+        "description": "Mamypoko Junior XXXL importada da indonesia",
+        "size": [
+            "Tamanho XXXL 25kg-35kg"
+        ],
+        "count": [
+            "1 Unidade avulsa"
+        ]
+    },
+    "junior2": {
+        "name": "junior2",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/HCCVjgC.png",
+        "names": [
+            "Mamypoko Junior XXXL",
+            "Mamypoko XXXL",
+            "Fralda XXXL",
+            "Mamypoko",
+            "Fralda"
+        ],
+        "price": 40,
+        "description": "Mamypoko Junior XXXL importada da indonesia",
+        "size": [
+            "Tamanho XXXL 25kg-35kg"
+        ],
+        "count": [
+            "3 Unidades avulsas"
+        ]
+    },
+    "junior3": {
+        "name": "junior3",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/HCCVjgC.png",
+        "names": [
+            "Mamypoko Junior XXXL",
+            "Mamypoko XXXL",
+            "Fralda XXXL",
+            "Mamypoko",
+            "Fralda"
+        ],
+        "price": 65,
+        "description": "Mamypoko Junior XXXL importada da indonesia",
+        "size": [
+            "Tamanho XXXL 25kg-35kg"
+        ],
+        "count": [
+            "5 Unidades avulsas"
+        ]
+    },
+    "junior4": {
+        "name": "junior4",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/HCCVjgC.png",
+        "names": [
+            "Mamypoko Junior XXXL",
+            "Mamypoko XXXL",
+            "Fralda XXXL",
+            "Mamypoko",
+            "Fralda"
+        ],
+        "price": 120,
+        "description": "Mamypoko Junior XXXL importada da indonesia",
+        "size": [
+            "Tamanho XXXL 25kg-35kg"
+        ],
+        "count": [
+            "10 Unidades avulsas"
+        ]
+    },
+    "royal1": {
+        "name": "royal1",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/g7Z4r50.png",
+        "names": [
+            "Mamypoko Royal XXL",
+            "Mamypoko XXL",
+            "Fralda XXL",
+            "Mamypoko",
+            "Fralda"
+        ],
+        "price": 15,
+        "description": "Mamypoko Royal XXL importada da indonesia",
+        "size": [
+            "Tamanho XXL 18kg-25kg"
+        ],
+        "count": [
+            "1 Unidade avulsa"
+        ]
+    },
+    "royal2": {
+        "name": "royal2",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/g7Z4r50.png",
+        "names": [
+            "Mamypoko Royal XXL",
+            "Mamypoko XXL",
+            "Fralda XXL",
+            "Mamypoko",
+            "Fralda"
+        ],
+        "price": 40,
+        "description": "Mamypoko Royal XXL importada da indonesia",
+        "size": [
+            "Tamanho XXL 18kg-25kg"
+        ],
+        "count": [
+            "3 Unidades avulsas"
+        ]
+    },
+    "royal3": {
+        "name": "royal3",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/g7Z4r50.png",
+        "names": [
+            "Mamypoko Royal XXL",
+            "Mamypoko XXL",
+            "Fralda XXL",
+            "Mamypoko",
+            "Fralda"
+        ],
+        "price": 65,
+        "description": "Mamypoko Royal XXL importada da indonesia",
+        "size": [
+            "Tamanho XXL 18kg-25kg"
+        ],
+        "count": [
+            "5 Unidades avulsas"
+        ]
+    },
+    "royal4": {
+        "name": "royal4",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/g7Z4r50.png",
+        "names": [
+            "Mamypoko Royal XXL",
+            "Mamypoko XXL",
+            "Fralda XXL",
+            "Mamypoko",
+            "Fralda"
+        ],
+        "price": 120,
+        "description": "Mamypoko Royal XXL importada da indonesia",
+        "size": [
+            "Tamanho XXL 18kg-25kg"
+        ],
+        "count": [
+            "10 Unidades avulsas"
+        ]
+    },
+    "ups1": {
+        "name": "ups1",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/qUOyxEA.png",
+        "names": [
+            "Ups & Ups 4T-5T",
+            "Ups&Ups 4T-5T",
+            "Ups&Ups",
+            "Ups & Ups",
+            "UpsUps",
+            "Ups Ups",
+            "Pull ups",
+            "Pull-ups",
+            "Fralda 4T-5T",
+            "Fralda"
+        ],
+        "price": 15,
+        "description": "Ups & Ups 4T-5T Laterais em velcro, semelhante a Huggies Pull ups, fralda importa dos EUA",
+        "size": [
+            "Tamanho 4T-5T 18kg-25kg"
+        ],
+        "count": [
+            "1 Unidade avulsa"
+        ]
+    },
+    "ups2": {
+        "name": "ups2",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/qUOyxEA.png",
+        "names": [
+            "Ups & Ups 4T-5T",
+            "Ups&Ups 4T-5T",
+            "Ups&Ups",
+            "Ups & Ups",
+            "UpsUps",
+            "Ups Ups",
+            "Pull ups",
+            "Pull-ups",
+            "Fralda 4T-5T",
+            "Fralda"
+        ],
+        "price": 40,
+        "description": "Ups & Ups 4T-5T Laterais em velcro, semelhante a Huggies Pull ups, fralda importa dos EUA",
+        "size": [
+            "Tamanho 4T-5T 18kg-25kg"
+        ],
+        "count": [
+            "3 Unidades avulsas"
+        ]
+    },
+    "ups3": {
+        "name": "ups3",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/qUOyxEA.png",
+        "names": [
+            "Ups & Ups 4T-5T",
+            "Ups&Ups 4T-5T",
+            "Ups&Ups",
+            "Ups & Ups",
+            "UpsUps",
+            "Ups Ups",
+            "Pull ups",
+            "Pull-ups",
+            "Fralda 4T-5T",
+            "Fralda"
+        ],
+        "price": 65,
+        "description": "Ups & Ups 4T-5T Laterais em velcro, semelhante a Huggies Pull ups, fralda importa dos EUA",
+        "size": [
+            "Tamanho 4T-5T 18kg-25kg"
+        ],
+        "count": [
+            "5 Unidades avulsas"
+        ]
+    },
+    "ups4": {
+        "name": "ups4",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/qUOyxEA.png",
+        "names": [
+            "Ups & Ups 4T-5T",
+            "Ups&Ups 4T-5T",
+            "Ups&Ups",
+            "Ups & Ups",
+            "UpsUps",
+            "Ups Ups",
+            "Pull ups",
+            "Pull-ups",
+            "Fralda 4T-5T",
+            "Fralda"
+        ],
+        "price": 120,
+        "description": "Ups & Ups 4T-5T Laterais em velcro, semelhante a Huggies Pull ups, fralda importa dos EUA",
+        "size": [
+            "Tamanho 4T-5T 18kg-25kg"
+        ],
+        "count": [
+            "10 Unidades avulsas"
+        ]
+    },
+    "huggies1": {
+        "name": "huggies1",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/DuaW1cm.png",
+        "names": [
+            "Huggies 4T-5T",
+            "Huggies Pull ups",
+            "Huggies",
+            "Huggies Pull-ups",
+            "Pull ups",
+            "Pull-ups",
+            "Fralda 4T-5T",
+            "Fralda"
+        ],
+        "price": 15,
+        "description": "Huggies Pull Ups 4T-5T Laterais em velcro, fralda importa dos EUA",
+        "size": [
+            "Tamanho 4T-5T 18kg-25kg"
+        ],
+        "count": [
+            "1 Unidade avulsa"
+        ]
+    },
+    "huggies2": {
+        "name": "huggies2",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/DuaW1cm.png",
+        "names": [
+            "Huggies 4T-5T",
+            "Huggies Pull ups",
+            "Huggies",
+            "Huggies Pull-ups",
+            "Pull ups",
+            "Pull-ups",
+            "Fralda 4T-5T",
+            "Fralda"
+        ],
+        "price": 40,
+        "description": "Huggies Pull Ups 4T-5T Laterais em velcro, fralda importa dos EUA",
+        "size": [
+            "Tamanho 4T-5T 18kg-25kg"
+        ],
+        "count": [
+            "3 Unidades avulsas"
+        ]
+    },
+    "huggies3": {
+        "name": "huggies3",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/DuaW1cm.png",
+        "names": [
+            "Huggies 4T-5T",
+            "Huggies Pull ups",
+            "Huggies",
+            "Huggies Pull-ups",
+            "Pull ups",
+            "Pull-ups",
+            "Fralda 4T-5T",
+            "Fralda"
+        ],
+        "price": 65,
+        "description": "Huggies Pull Ups 4T-5T Laterais em velcro, fralda importa dos EUA",
+        "size": [
+            "Tamanho 4T-5T 18kg-25kg"
+        ],
+        "count": [
+            "5 Unidades avulsas"
+        ]
+    },
+    "huggies4": {
+        "name": "huggies4",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/DuaW1cm.png",
+        "names": [
+            "Huggies 4T-5T",
+            "Huggies Pull ups",
+            "Huggies",
+            "Huggies Pull-ups",
+            "Pull ups",
+            "Pull-ups",
+            "Fralda 4T-5T",
+            "Fralda"
+        ],
+        "price": 120,
+        "description": "Huggies Pull Ups 4T-5T Laterais em velcro, fralda importa dos EUA",
+        "size": [
+            "Tamanho 4T-5T 18kg-25kg"
+        ],
+        "count": [
+            "10 Unidades avulsas"
+        ]
+    },
+    "babyusagi": {
+        "name": "babyusagi",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/UsUk74q.png",
+        "names": [
+            "Fralda Baby Usagi",
+            "Baby usagi",
+            "Fralda ABDL Baby Usagi",
+            "ABDL",
+            "Fralda ABDL",
+            "Fralda"
+        ],
+        "price": 65,
+        "description": "Fralda ABDL Baby Usagi LittleForBig tamanho M avulsa",
+        "size": [
+            "Tamanho M"
+        ],
+        "count": [
+            "1 Unidade avulsa"
+        ]
+    },
+    "goodnites": {
+        "name": "goodnites",
+        "category": "fraldas",
+        "image": "https://i.imgur.com/i2zyFZr.png",
+        "names": [
+            "Goodnites Korea",
+            "Goodnites",
+            "Pull ups",
+            "Pull-ups",
+            "Fralda"
+        ],
+        "price": 300,
+        "description": "Goodnites Coreana com Laterais em velcro e estampa de unicornio, fralda importa da Coréia",
+        "size": [
+            "Tamanho 4T-5T 18kg-25kg"
+        ],
+        "count": [
+            "Pacote fechado com 20 Unidades avulsas"
+        ]
+    }
+}

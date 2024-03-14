@@ -1,0 +1,128 @@
+<main>
+    <div id="sucessModal" class="modal">
+        <div class="modal-content">
+            <img src="https://i.imgur.com/0sWqYur.png" alt="banner de alerta de compra realizada com sucesso">
+        </div>
+    </div>
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <img src="https://i.imgur.com/Hvkz6wo.png" alt="banner de alerta de erro na finalizacao da compra">
+        </div>
+    </div>
+    <div id="errModal" class="modal">
+        <div class="modal-content">
+            <img src="https://i.imgur.com/uuyHo9Q.png" alt="banner de alerta de erro interno">
+        </div>
+    </div>
+<h1>Compra realizada com sucesso!</h1>
+<h3>Infomações do pedido:</h3>
+<div>
+    <h3>O numero do seu pedido é <span id="orderid"></span></h3>
+</div>
+<div>
+    <h3 id="cupom"></h3>
+</div>
+<div>
+    <h3>total Pago: R$ <span id="cartTotal"></span></h3>
+</div>
+<h3>Produtos Comprados:</h3>
+<div id="cartItems"></div>
+<div>
+    <h3>Observações: Você pode acessar o historico de pedidos no Menu, ou usar o comando /pedido [numero do pedido] no nosso servidor do discord pare ver mais infomações, enviaremos por email o Codigo de rastreio e sera disponibilizado nas infomações do pedido assim que enviado</h3>
+</div>
+</main>
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        window.onload = function() {
+            let url = window.location.toString();
+            if (url.indexOf("?") > 0) {
+                let clean_url = url.substring(0, url.indexOf("?"));
+                window.history.replaceState({}, document.title, clean_url);
+            }
+        };
+        
+        const { publishableKey } = await fetch('/apis/public').then((r) => r.json());
+        const { clientSecret } = await fetch('/apis/secret').then(r => r.json());
+        const stripe = Stripe(publishableKey, {
+            apiVersion: "2020-08-27",
+        });
+        const { error, paymentIntent } = await stripe.retrievePaymentIntent(
+            clientSecret
+        );
+        
+        if(error) {
+            let modal = document.getElementById("payModal");
+            modal.style.display = "block";
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        } else {
+            fetch(`/apis/orders?dataid=${paymentIntent.id}`, {
+                method: 'GET',
+            }).then(response => {
+                localStorage.clear()
+                return response.json()
+            }).then(data => {
+                console.log(data)
+                let produtos = data.produtos
+                let totalPago = data.total
+                let cartTotalElement = document.getElementById("cartTotal");
+                cartTotalElement.textContent = totalPago
+
+                let orderElement = document.getElementById("orderid");
+                orderElement.textContent = data.formated;
+                
+                if(data.cupom) {
+                    let cupomElement = document.getElementById("cupom");
+                    cupomElement.textContent = "cupom utilizado: " + data.cupom;
+                }
+
+                let cartItemsContainer = document.getElementById("cartItems");
+                cartItemsContainer.innerHTML = "";
+
+                Object.entries(data.cart).forEach(([a, b], i) => {
+                    if(["cupom", "total"].includes(a)) return;
+                    let item = produtos[a]
+                    if (b > 0) {
+                        let itemElement = document.createElement("div");
+                        itemElement.classList.add("cart-item");
+                        itemElement.innerHTML = `
+                                <img src="${item.image}" alt="${item.description}">
+                                <div class="item-details">
+                                <p>${item.name}</p>
+                                <p>R$ ${item.price}</p>
+                                </div>
+                                <div class="item-quantity">
+                                <span>${b}</span>
+                                </div>
+                            `;
+                        cartItemsContainer.appendChild(itemElement);
+                    }
+                })
+                let modal = document.getElementById("sucessModal");
+                modal.style.display = "block";
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            })
+            .catch(error => {
+                console.log("[SUCESS PAGE]", error)
+                let modal = document.getElementById("payModal");
+                modal.style.display = "block";
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            })  
+        }
+
+        
+    });
+</script>
+</html>

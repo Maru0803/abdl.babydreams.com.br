@@ -1,0 +1,78 @@
+* {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nerko One';
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus,
+ a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+.house-border {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-style: solid;
+    border-width: 0 100px 100px 100px;
+    border-color: #ffffff #ffffff #ffffff #ffffff;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+header {
+    background-color: #c3b0e8;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.produto {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+}
+
+.centertext {
+    text-align: center;
+}
+
+.add-to-cart {
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: #9370DB;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #8A2BE2;
+}
+
+.section {
+    height: 100%;
+}
+

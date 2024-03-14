@@ -1,0 +1,147 @@
+<main>
+    <div id="payModal" class="modal">
+        <div class="modal-content">
+            <img src="https://i.imgur.com/dHLtxYV.png" alt="banner de alerta de erro no pagamento">
+        </div>
+    </div>
+    <div id="errModal" class="modal">
+        <div class="modal-content">
+            <img src="https://i.imgur.com/uuyHo9Q.png" alt="banner de alerta de erro interno">
+        </div>
+    </div>
+    <div id="stockNull" class="modal">
+        <div class="modal-content">
+            <img src="https://i.imgur.com/3yJk2Zh.png" alt="banner de alerta que um dos produtos do carrinho agora esta indisponivel">
+        </div>
+    </div>
+    <h3>Produtos:</h3>
+    <div id="cartItems"></div>
+    <div class="total-section">
+        <p>Total: R$ <span id="cartTotal"><%= total %></span></p>
+    </div>
+    <form id="payment-form">
+        <h3>Envio</h3>
+        <div id="link-authentication-element"></div>
+        <div id="shipping-address-element"></div>
+        <h3>Pagamento</h3>
+        <div id="payment-element"></div>
+        <button id="submit">Pagar</button>
+        <div id="error-message"></div>
+    </form>
+    <div id="messages" role="alert" style="display: none"></div>
+</main>
+<script src="https://js.stripe.com/v3/"></script>
+<script defer>
+
+
+    document.addEventListener("DOMContentLoaded", async () => { 
+        await fetch('/payment/intent').then((r) => r.json());
+        const { publishableKey } = await fetch('/apis/public').then((r) => r.json());
+        const { clientSecret } = await fetch('/apis/secret').then(r => r.json());
+        const stripe = Stripe(publishableKey, {
+            apiVersion: "2020-08-27",
+        });
+
+        const elements = stripe.elements({ clientSecret });
+        const paymentElement = elements.create("payment");
+        paymentElement.mount("#payment-element");
+
+        const linkAuthenticationElement = elements.create("linkAuthentication");
+        linkAuthenticationElement.mount("#link-authentication-element");
+
+        const shippingAddressElement = elements.create("address", { mode: 'shipping', allowedCountries: ['BR']});
+        shippingAddressElement.mount("#shipping-address-element");
+        
+        let submitted = false;
+        const form = document.getElementById("payment-form");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            if (submitted) {
+                return;
+            }
+            submitted = true;
+            form.querySelector("button").disabled = true;
+
+            const nameInput = document.querySelector("#name");
+            const { error: stripeError } = await stripe.confirmPayment({
+                elements,
+                confirmParams: {
+                    return_url: `${window.location.origin}/payment/sucess`,
+                },
+            });
+
+            if (stripeError) {
+                addMessage();
+                submitted = false;
+                form.querySelector("button").disabled = false;
+                return;
+            }
+        });
+    });
+
+    const addMessage = () => {
+        let modal = document.getElementById("payModal");
+        modal.style.display = "block";
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    };
+
+    window.addEventListener('load', () => {
+        display()
+    });
+
+    function display() {
+        fetch(`/apis/buystock`, {
+            method: 'GET',
+        }).then(response => {
+            return response.json();
+        })
+        .then(data => {
+            if(data.status === "outstock")  throw new Error('outstock')
+            let produtos = data.produtos
+            let cartItems = data.cart
+            let cartItemsContainer = document.getElementById("cartItems");
+            cartItemsContainer.innerHTML = "";
+
+            Object.entries(cartItems).forEach(([a, b], i) => {
+                if(["cupom", "total"].includes(a)) return;
+                let item = produtos[a]
+                if (b > 0) {
+                    let itemElement = document.createElement("div");
+                    itemElement.classList.add("cart-item");
+                    itemElement.innerHTML = `
+                            <img src="${item.image}" alt="${item.description}">
+                            <div class="item-details">
+                            <p>${item.name}</p>
+                            <p>R$ ${item.price}</p>
+                            </div>
+                            <div class="item-quantity">
+                            <span>${b}</span>
+                            </div>
+                        `;
+                    cartItemsContainer.appendChild(itemElement);
+                }
+            })
+            if (!Object.entries(cartItems)) cartItemsContainer.innerHTML = "<p>Nenhum item no carrinho</p>";
+        })
+        .catch(error => {
+            console.log("[PAYMENT PAGE]", error)
+            if(error.message === "outstock") {
+                let modal = document.getElementById("stockNull");
+                modal.style.display = "block";
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                        localStorage.clear()
+                        window.location.href = '/';
+                    }
+                }
+            } else {
+                addMessage()
+            }
+        })
+    }
+</script>

@@ -1,0 +1,41 @@
+<main>
+    <p class="centertext"> Bem vindos(as) a Baby Dreams Store, aqui você encontra os melhores produtos ABDL a pronta
+      entrega do Brasil!</p>
+</main>
+<div class="produtos-grid">
+    <% let entries=Object.entries(products) %>
+    <% entries.map(([a, b], i)=> { %>
+        <% if (stock[b.name] < 1) return;  %>
+        <a href="info/<%= b.name %>" class="produto" data-category="<%= b.category %>">
+            <img src="<%= b.image %>" alt="<%= b.description %>">
+            <h3 id="informations" data-info='{"nome": "<%= b.name %>", "preco": "<%= b.price %>"}'>
+            </h3><%= b.names[0] %></h3>
+            <h4>Preço R$<%= b.price %></h4>
+            <p><%= b.size %></p>
+            <button class="add-to-cart">Adicionar ao Carrinho</button>
+        </a>
+    <% }) %>
+</div>
+<script>
+    function filterProducts(category, defaultFilter = null) {
+        const produtos = document.querySelectorAll('.produto');
+        produtos.forEach(produto => {
+            const produtoCategoria = produto.getAttribute('data-category');
+            if (defaultFilter && produtoCategoria === defaultFilter) {
+                produto.style.display = 'block'; 
+            } else if (category === 'all' || produtoCategoria === category) {
+                produto.style.display = 'block'; 
+            } else {
+                produto.style.display = 'none'; 
+            }
+        });
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const defaultFilter = urlParams.get('category');
+
+    if (defaultFilter) {
+        filterProducts(defaultFilter);
+    }
+</script>
+  
