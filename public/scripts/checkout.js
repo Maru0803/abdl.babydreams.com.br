@@ -46,6 +46,7 @@ if (nextButton) nextButton.addEventListener('click', function () {
 });
 
 async function displayItems() {
+    const { produtos } = await fetch('/apis/produtos').then(r => r.json())
     updateCartTotal();
     let cartItems = JSON.parse(localStorage.getItem("carrinhoDeCompras"));
     let cartItemsContainer = document.getElementById("cartItems");
@@ -53,6 +54,7 @@ async function displayItems() {
 
     if (cartItems && cartItems.length > 0) {
         cartItems.forEach((item, index) => {
+            let item = produtos[i.name]
             let itemElement = document.createElement("div");
             itemElement.classList.add("cart-item");
             itemElement.innerHTML = `
