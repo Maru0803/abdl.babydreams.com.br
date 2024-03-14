@@ -164,7 +164,7 @@ async function displayCartItems() {
                 <img src="${item.image}" alt="${item.description}">
                 <div class="item-details">
                     <p>${item.names[0]}</p>
-                    <p>R$ ${item.price} - {item.count[0]}</p>
+                    <p>R$ ${item.price} - ${item.count[0]}</p>
                 </div>
                 <div class="item-quantity">
                     <button class="btn-add" onclick="decreaseQuantity(${index})">-</button>
