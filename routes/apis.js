@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { order, buystock, verifyCart, verifyGift } = require("../utils/apis.js");
 const { database } = require("../utils/database.js");
-require('dotenv').config()
+require('dotenv').config();
+const Produtos = require('../utils/produtos.json')
 
 function isAuthorized(req, res, next) {
     if (req.user) {
@@ -53,6 +54,8 @@ router.get('/secret', isAuthorized, async (req, res) => {
         clientSecret: secret,
     });
 });
-
+router.get('/produtos', async (req, res) => {
+    res.json({produtos: Produtos})
+})
 
 module.exports = router;
