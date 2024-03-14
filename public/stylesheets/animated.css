@@ -39,12 +39,21 @@
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.4);
 }
-
-.modal-content {
-    margin: 15% auto;
-    padding: 20px;
-    width: 20%;
-    text-align: center;
+@media only screen and (min-width: 769px) {
+   .modal-content {
+      margin: 15% auto;
+      padding: 20px;
+      width: 30%;
+      text-align: center;
+   }
+}
+@media only screen and (max-width: 768px) {
+    .modal-content{
+        margin: 15% auto;
+        padding: 30px;
+        text-align: center;
+        width: 60%;
+    }
 }
 
 .image-container {
