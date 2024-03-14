@@ -207,7 +207,6 @@ giftButton.addEventListener('click', () => {
         return response.json();  
     })
     .then(data => {
-        console.log(data)
         if(data.status === "invalid") throw new Error("invalid")
         if(data.status === "used") throw new Error("used")
         updateCartTotal(data.value);
@@ -225,7 +224,6 @@ giftButton.addEventListener('click', () => {
         }
     })
     .catch(error => {
-        console.log(error)
         let message = error.message === "used" ? "Cupom ja utilizado" : "Algo deu errado" 
         if (!errorMessage) {
             errorMessage = document.createElement('p');
