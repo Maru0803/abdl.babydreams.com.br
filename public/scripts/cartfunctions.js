@@ -156,7 +156,7 @@ async function displayCartItems() {
     cartItemsContainer.innerHTML = "";
 
     if (cartItems && cartItems.length > 0) {
-        cartItems.forEach((item, index) => {
+        cartItems.forEach((i, index) => {
             var item = produtos[i.nome]
             let itemElement = document.createElement("div");
             itemElement.classList.add("cart-item");
