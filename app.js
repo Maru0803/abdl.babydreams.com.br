@@ -18,7 +18,7 @@ const verificarOrigem = (req, res, next) => {
     if (origin === 'localhost:3005') {
         next();
     } else {
-        res.status(403).send('Acesso Negado');
+        res.status(200).send('Acesso Negado');
     }
 };
 
