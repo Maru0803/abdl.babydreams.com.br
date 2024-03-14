@@ -13,7 +13,9 @@ router.get('/checkout', passport.authenticate('cart', {
 
 router.get('/logout', (req, res) => {
     if (req.user) {
-        req.logout();
+        req.logout(function(err) {
+            console.log(err)
+        });
         console.log("[LOGOUT]: User desconectado")
         res.redirect('/');
     } else {
