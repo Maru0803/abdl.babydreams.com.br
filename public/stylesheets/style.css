@@ -88,7 +88,7 @@ header {
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     .house-border {
        background-color: #f0f0f0;
        padding: 20px;
