@@ -17,7 +17,7 @@ passport.deserializeUser(async (id, done) => {
 passport.use("home", new GoogleStrategy({
     clientID: process.env.googleapikey,
     clientSecret: process.env.googleclientsecret,
-    callbackURL: 'https://starfish-app-6bc4k.ondigitalocean.app/auth/checkout',
+    callbackURL: 'https://www.abdl-babydreams.com.br/auth/checkout',
    scope: ['profile', 'email']
 }, async (accessToken, refreshToken, profile, done) => {
     try {
@@ -34,7 +34,7 @@ passport.use("home", new GoogleStrategy({
 passport.use("cart", new GoogleStrategy({
     clientID: process.env.googleapikey,
     clientSecret: process.env.googleclientsecret,
-    callbackURL: 'https://starfish-app-6bc4k.ondigitalocean.app/auth/checkout',
+    callbackURL: 'https://www.abdl-babydreams.com.br/auth/checkout',
     scope: ['profile', 'email']
 }, async (accessToken, refreshToken, profile, done) => {
     try {
