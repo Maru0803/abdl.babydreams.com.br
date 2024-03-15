@@ -78,6 +78,9 @@ app.get('/privacity', async (req, res) => {
     res.render('privacity')
 });
 
+app.get('/sitemap', async (req, res) => {
+    res.render('sitemap.xml')
+});
 
 app.listen(8080, () => {
     console.log('Online')
