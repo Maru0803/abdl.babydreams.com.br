@@ -78,9 +78,7 @@ app.get('/privacity', async (req, res) => {
     res.render('privacity')
 });
 
-app.get('/sitemap.xml', async (req, res) => {
-    res.header('Content-Type', 'application/xml');
-    res.sendFile('sitemap.xml');
+app.get('/sitemap.xml', async (req, res) => {    res.sendFile('sitemap.xml');
 });
 
 app.listen(8080, () => {
