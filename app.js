@@ -80,7 +80,7 @@ app.get('/privacity', async (req, res) => {
 
 app.get('/sitemap.xml', async (req, res) => {
     res.header('Content-Type', 'application/xml');
-    res.render('sitemap')
+    res.render('sitemap.xml')
 });
 
 app.listen(8080, () => {
