@@ -1,6 +1,6 @@
 /***
  * @author Maru
- * @link https://abdl.babydreams.com.br
+ * @link https://abdl-babydreams.com.br
  * @copyright Não kibe meu website,
 ***/
 
@@ -15,7 +15,7 @@ const { database } = require("./utils/database.js");
 
 const verificarOrigem = (req, res, next) => {
     const origin = req.get('host');
-    if (origin === 'starfish-app-6bc4k.ondigitalocean.app') {
+    if (origin === 'www.abdl-babydreams.com.br') {
         next();
     } else {
         res.status(200).send('Acesso Negado');
