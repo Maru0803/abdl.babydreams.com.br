@@ -164,3 +164,34 @@ div span:nth-child(9n+11) {
     width: 250px;
     height: auto;
 }
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    padding: 20px;
+}
+
+.info-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.info-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.info-item-text {
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .info-grid {
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 20px;
+        padding: 20px;
+    }
+}
