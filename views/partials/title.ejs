@@ -17,6 +17,38 @@
     <link rel="stylesheet" href="/stylesheets/cart.css">
     <link rel="stylesheet" href="/stylesheets/menu.css">
     <meta name="google-site-verification" content="f5od87DS2hopP2S2lmfDg7JfB-A0CWgk7FMapuo7dWs" />
+<style>
+.info-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    padding: 20px;
+}
+
+.info-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.info-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.info-item-text {
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .info-grid {
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 20px;
+        padding: 20px;
+    }
+}
+</style>
 </head>
 
 <body>
