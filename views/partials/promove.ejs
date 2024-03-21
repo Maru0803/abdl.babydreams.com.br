@@ -2,6 +2,6 @@
     <% let eentries = Object.entries(conteudo) %>
     <% eentries.map(([a, b], i)=> { %>
         <div class="info-item"> <img src="<%= b.image %>" alt="<%= b.text %>"> </div>
-        <div class="info-item" class="info-item-text"> <h3> <%= b.text %> </h3> </div>
+        <div class="info-item" class="info-item-text"> <h2> <%= b.text %> </h2> </div>
     <% }) %>
 </div>
