@@ -79,6 +79,7 @@ app.get('/', async (req, res) => {
         user: req?.user,
         products: products,
         stock: stock,
+        conteudo: conteudo
     })
 });
 
