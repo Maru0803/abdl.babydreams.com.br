@@ -5,7 +5,8 @@ var list = Object.entries(Produtos).forEach(([a, b]) => {
     router.get("/" + b.name, (req, res) => {
         res.render("info", {
             name: a,
-            data: b
+            data: b,
+            conteudo: conteudo
         })
     });
 })
