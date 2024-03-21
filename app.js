@@ -22,6 +22,21 @@ const verificarOrigem = (req, res, next) => {
     }
 };
 
+const conteudo = { 
+    "loja": {  
+         "image": "https://i.imgur.com/EZIoltq.png", 
+         "text": "A Baby Dreams Store é a mais recente adição ao mercado ADBL brasileiro, com o objetivo de expandir continuamente e oferecer uma gama cada vez maior de produtos à nossa comunidade, mantendo os preços acessíveis, mesmo para quantidades menores." 
+    }, 
+    "frete": { 
+        "image": "https://i.imgur.com/QJYf6z1.png",
+        "text": "Nosso compromisso é com a rapidez na entrega e a segurança dos seus produtos. Utilizamos os Correios como nosso principal meio de envio, garantindo a postagem de encomendas em até três dias úteis após a confirmação do pedido. Pedidos em pré-venda podem ter um prazo de entrega estendido." } 
+    },
+    "notas": { 
+        "image": "https://i.imgur.com/0TEUcmb.png",
+        "text": "A Baby Dreams Store, anteriormente operando na plataforma Shopee, possui um histórico comprovado de satisfação do cliente. Mantemos altas taxas de resposta, garantindo que todas as dúvidas de nossos clientes sejam prontamente atendidas."  
+    }
+}
+
 
 app.use(express.json());
 app.use(session({
@@ -67,15 +82,10 @@ app.get('/', async (req, res) => {
     })
 });
 
-
-app.get('/loja', async (req, res) => {
-    res.render('loja')
-});
-app.get('/frete', async (req, res) => {
-    res.render('frete')
-});
 app.get('/privacity', async (req, res) => {
-    res.render('privacity')
+    res.render('privacity', {
+        conteudo: conteudo
+    })
 });
 
 app.get('/sitemap.xml', async (req, res) => {    
