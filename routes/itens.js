@@ -3,7 +3,7 @@ const Produtos = require('../utils/produtos.json')
 const conteudo = { 
     "loja": {  
          "image": "https://i.imgur.com/EZIoltq.png", 
-         "text": "A Baby Dreams Store é a mais recente adição ao mercado ADBL brasileiro, com o objetivo de expandir continuamente e oferecer uma gama cada vez maior de produtos à nossa comunidade, mantendo os preços acessíveis, mesmo para quantidades menores." 
+         "text": "A Baby Dreams Store é a mais recente loja ADBL do brasil, com o objetivo de expandir continuamente e oferecer uma gama cada vez maior de produtos à nossa comunidade, mantendo os preços acessíveis, mesmo para quantidades menores." 
     }, 
     "frete": { 
         "image": "https://i.imgur.com/QJYf6z1.png",
