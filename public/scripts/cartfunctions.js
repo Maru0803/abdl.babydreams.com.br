@@ -1,3 +1,4 @@
+let touchEvent = 'ontouchstart' in window ? 'ontouchstart' : 'onclick';
 var sidebar = false;
 var menuside = false;
 var stock;
@@ -71,7 +72,7 @@ function adicionarAoCarrinho(nomeProduto, precoProduto) {
             document.getElementById("cartSidebar").style.width = "400px";
             displayCartItems();
         }
-        window.onclick = function (event) {
+        window[touchEvent] = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
@@ -79,7 +80,7 @@ function adicionarAoCarrinho(nomeProduto, precoProduto) {
     } else {
         let modal = document.getElementById("limitModal");
         modal.style.display = "block";
-        window.onclick = function (event) {
+        window[touchEvent] = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
@@ -101,7 +102,7 @@ function increaseQuantity(itemId) {
         } else {
             let modal = document.getElementById("limitModal");
             modal.style.display = "block";
-            window.onclick = function (event) {
+            window[touchEvent] = function (event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
                 }
