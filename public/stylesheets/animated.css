@@ -188,6 +188,11 @@ div span:nth-child(9n+11) {
 }
 
 @media only screen and (max-width: 768px) {
+    .info-item img {
+        max-width: 60%;
+        height: auto;
+    }
+
     .info-grid {
         display: grid;
         grid-template-columns: 100%;
