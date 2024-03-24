@@ -1,5 +1,3 @@
-let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
-
 window.addEventListener('load', () => {
     displayItems()
 });
