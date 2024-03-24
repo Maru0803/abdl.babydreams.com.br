@@ -1,4 +1,4 @@
-.cart-button {
+alliotens, .cart-button {
     width: 50px;
     height: 50px;
     border: none;
@@ -12,8 +12,8 @@
     cursor: pointer;
     z-index: 999;
 }
-  
-.cart-button:hover {
+
+.alliotens, .cart-button:hover {
     background-color: #663399;
 }
   
