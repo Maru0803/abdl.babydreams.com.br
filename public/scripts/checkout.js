@@ -1,3 +1,5 @@
+let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+
 window.addEventListener('load', () => {
     displayItems()
 });
@@ -7,7 +9,7 @@ function verifycart() {
     if (!cartItems || cartItems.length === 0) {
         let modal = document.getElementById("nullCart");
         modal.style.display = "block";
-        window.onclick = function (event) {
+        window[touchEvent] = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
