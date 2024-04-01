@@ -22,6 +22,15 @@ const verificarOrigem = (req, res, next) => {
     }
 };
 
+const NotFound = (req, res, next) => {
+    const status = req.status
+    if (status !== 404) {
+        next();
+    } else {
+        res.redirect("/")
+    }
+};
+
 const conteudo = { 
     "loja": {  
          "image": "https://i.imgur.com/EZIoltq.png", 
@@ -56,6 +65,7 @@ app.use(express.static(path.join(__dirname + '/public')));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(verificarOrigem);
+app.use(NotFound);
 const infoRoute = require('./routes/itens');
 const authRoute = require('./routes/auth');
 const checkoutRoute = require('./routes/checkout');
