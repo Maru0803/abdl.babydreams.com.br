@@ -15,11 +15,11 @@ const { database } = require("./utils/database.js");
 
 const verificarOrigem = (req, res, next) => {
     const origin = req.get('host');
-    if (origin === 'www.abdl-babydreams.com.br') {
-        next();
-    } else {
-        res.status(200).send('Acesso Negado');
-    }
+    //if (origin === 'www.abdl-babydreams.com.br') {
+        //next();
+    //} else {
+       // res.status(200).send('Acesso Negado');
+    //}
 };
 
 const NotFound = (req, res, next) => {
