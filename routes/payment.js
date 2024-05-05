@@ -42,7 +42,6 @@ router.get("/intent", isAuthorized, async (req, res) => {
             amount: (getcart.total * 100),
             automatic_payment_methods: { enabled: true },
         });
-        console.log(paymentIntent.client_secret)
         database.ref(`login/${req.user.sub}`).update({secret: paymentIntent.client_secret})
         res.send({
             clientSecret: "secret ok",
