@@ -15,20 +15,15 @@ const { database } = require("./utils/database.js");
 
 const verificarOrigem = (req, res, next) => {
     const origin = req.get('host');
-    //if (origin === 'www.abdl-babydreams.com.br') {
-        //next();
-    //} else {
-       // res.status(200).send('Acesso Negado');
-    //}
-};
-
-const NotFound = (req, res, next) => {
-    const status = req.status
-    if (status !== 404) {
+    if (origin === 'www.abdl-babydreams.com.br') {
         next();
     } else {
-        res.redirect("/")
+        res.status(200).send('Acesso Negado');
     }
+};
+
+const NotFound = (req, res) => {
+    res.redirect("/")
 };
 
 const conteudo = { 
@@ -65,7 +60,7 @@ app.use(express.static(path.join(__dirname + '/public')));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(verificarOrigem);
-app.use(NotFound);
+
 const infoRoute = require('./routes/itens');
 const authRoute = require('./routes/auth');
 const checkoutRoute = require('./routes/checkout');
@@ -102,6 +97,8 @@ app.get('/privacity', async (req, res) => {
 app.get('/sitemap.xml', async (req, res) => {    
     res.sendFile(__dirname + '/public/sitemap.xml');
 });
+
+app.get("*", NotFound);
 
 app.listen(8080, () => {
     console.log('Online')
